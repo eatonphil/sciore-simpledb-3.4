@@ -1,0 +1,29 @@
+Testing constants:
+	2 is not null
+	x is not null
+	null is null
+
+Comparing some terms:
+	1<2	true
+	1>2	false
+	1>null	false
+	1 IS NULL 	false
+	null IS NULL 	true
+
+Testing the parser changes:
+Should print "b IS NULL and a<2":
+	b IS NULL  and a<2
+
+new transaction: 3
+Testing the getVal method
+Here is the entire table
+	a=1	b=x1
+	a=2	b=null
+	a=3	b=x3
+	a=4	b=null
+transaction 3 committed
+
+new transaction: 4
+Executing: select a, b from t where b is null and a<3
+	a=2	b=null
+transaction 4 committed
